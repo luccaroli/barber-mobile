@@ -17,17 +17,7 @@ export const Title = styled.Text`
   margin: 32px 0 24px;
 `
 
-export const ForgotPassword = styled.TouchableOpacity`
-  margin-top: 24px;
-`
-
-export const ForgotPasswordText = styled.Text`
-  color: #f4ede4;
-  font-size: 14px;
-  font-family: 'Ubuntu_400Regular';
-`
-
-export const CreateAccountButton = styled.TouchableOpacity`
+export const BackSignIn = styled.TouchableOpacity`
   position: absolute;
   left: 0;
   bottom: 0;
@@ -41,8 +31,8 @@ export const CreateAccountButton = styled.TouchableOpacity`
   flex-direction: row;
 `
 
-export const CreateAccountButtonText = styled.Text`
-  color: #ff9000;
+export const BackSignInText = styled.Text`
+  color: #fff;
   font-size: 14px;
   font-family: 'Ubuntu_400Regular';
   margin-left: 8px;
