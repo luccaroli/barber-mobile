@@ -1,13 +1,17 @@
 import 'react-native-gesture-handler';
 
+import { NavigationContainer } from '@react-navigation/native'
+
 import { AppLoading } from 'expo'
 import React from 'react';
-import { StatusBar } from 'react-native';
+import { StatusBar, View } from 'react-native';
 import { Ubuntu_400Regular, Ubuntu_500Medium, useFonts } from '@expo-google-fonts/ubuntu'
 
-import AppStack from './src/routes/AppStack'
+import AppProvider from './src/hooks'
 
-export default function App() {
+import Routes from './src/routes'
+
+const App: React.FC = () => {
   let [fontsLoaded] = useFonts({
     Ubuntu_400Regular, 
     Ubuntu_500Medium,
@@ -17,10 +21,17 @@ export default function App() {
     return <AppLoading />;
   } else {
     return (
-      <>
-        <AppStack />
+      <NavigationContainer>
         <StatusBar barStyle="light-content" />
-      </>
+        <AppProvider>
+          <View style={{ flex: 1, backgroundColor: '#312e38' }}>
+            <Routes />
+          </View>
+        </AppProvider>
+      </NavigationContainer>
+
     );
   }
 }
+
+export default App

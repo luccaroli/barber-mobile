@@ -15,6 +15,7 @@ import { useNavigation } from '@react-navigation/native';
 import * as Yup from 'yup'
 
 import getValidationErrors from '../../utils/getValidationErrors'
+import { useAuth } from '../../hooks/AuthContext'
 
 import logoImg from '../../assets/logo.png'
 
@@ -41,6 +42,8 @@ const SignIn: React.FC = () => {
   const passwordInputRef = useRef<TextInput>(null)
   const navigation = useNavigation()
 
+  const { signIn } = useAuth()
+
   const handleSignIn = useCallback(async (data: SignInFormData) => {
     try {
       formRef.current?.setErrors({})
@@ -55,10 +58,10 @@ const SignIn: React.FC = () => {
       await schema.validate(data, {
         abortEarly: false
       })
-      // await signIn({
-      //   email: data.email,
-      //   password: data.password
-      // })
+      await signIn({
+        email: data.email,
+        password: data.password
+      })
 
       // history.push('/dashboard')
     } catch (error) {
@@ -77,7 +80,7 @@ const SignIn: React.FC = () => {
     }
 
     
-  }, [])
+  }, [signIn])
 
   return (
     <>

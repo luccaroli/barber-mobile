@@ -1,7 +1,5 @@
-
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
-import { NavigationContainer } from '@react-navigation/native'
 
 
 import SignIn from '../pages/SignIn/'
@@ -9,9 +7,8 @@ import SignUp from '../pages/SignUp/'
 
 const { Navigator, Screen } = createStackNavigator()
 
-function AppStack() {
+const Routes: React.FC = () => {
   return (
-    <NavigationContainer>
       <Navigator 
         screenOptions={{ 
           headerShown: false, 
@@ -20,8 +17,7 @@ function AppStack() {
             <Screen name="SignIn" component={SignIn} />
             <Screen name="SignUp" component={SignUp} />
       </Navigator>
-    </NavigationContainer>
   )
 }
 
-export default AppStack
+export default Routes
