@@ -6,7 +6,7 @@ import Dashboard from '../pages/Dashboard'
 
 import Profile from '../pages/Profile'
 import CreateApointment from '../pages/CreateApointment'
-import ApointmentCreated from '../pages/ApointmentCreated'
+import AppointmentCreated from '../pages/AppointmentCreated'
 
 const { Navigator, Screen } = createStackNavigator()
 
@@ -19,7 +19,7 @@ const Routes: React.FC = () => {
         }}>
             <Screen name="Dashboard" component={Dashboard} />
             <Screen name="CreateApointment" component={CreateApointment} />
-            <Screen name="ApointmentCreated" component={ApointmentCreated} />
+            <Screen name="AppointmentCreated" component={AppointmentCreated} />
             
             <Screen name="Profile" component={Profile} />
       </Navigator>

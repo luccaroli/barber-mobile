@@ -122,7 +122,7 @@ const CreateApointment: React.FC = () => {
         date,
       })
 
-      navigate('ApointmentCreated', { date: date.getTime() })
+      navigate('AppointmentCreated', { date: date.getTime() })
       
     } catch (error) {
       Alert.alert(
